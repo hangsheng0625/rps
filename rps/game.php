@@ -16,24 +16,23 @@ if ( isset($_POST['logout']) ) {
 $names = array('Rock', 'Paper', 'Scissors');
 $human = isset($_POST["human"]) ? $_POST['human']+0 : -1;
 
-$computer = 0; // Hard code the computer to rock
+// $computer = 0; // Hard code the computer to rock
 // TODO: Make the computer be random
-// $computer = rand(0,2);
+$computer = rand(0,2);
 
 // This function takes as its input the computer and human play
 // and returns "Tie", "You Lose", "You Win" depending on play
 // where "You" is the human being addressed by the computer
 function check($computer, $human) {
-    // For now this is a rock-savant checking function
-    // TODO: Fix this
-    if ( $human == 0 ) {
+    if ($human == $computer) {
         return "Tie";
-    } else if ( $human == 1 ) {
+    } elseif (($human == 0 && $computer == 2) || // Rock beats Scissors
+              ($human == 1 && $computer == 0) || // Paper beats Rock
+              ($human == 2 && $computer == 1)) { // Scissors beats Paper
         return "You Win";
-    } else if ( $human == 2 ) {
+    } else {
         return "You Lose";
     }
-    return false;
 }
 
 // Check to see how the play happenned
