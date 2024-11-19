@@ -39,7 +39,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
 <html>
 <head>
 <?php require_once "bootstrap.php"; ?>
-<title>Chuck Severance's Login Page</title>
+<title>93a147d0 - Chuck Severance's Login Page</title>
 </head>
 <body>
 <div class="container">
